@@ -1,14 +1,5 @@
-/*let myName = 'Bob ';
-document.write(myName);
-myName = 'John Doe';
-document.write(myName);
-
-let size = 100;
-let doubleSize = size * 2;
-let minSize = (doubleSize * 2) - (size / 2);
-document.write(minSize);*/
-
-alert('Hello World');
-
-let favoriteFood = 'Meat!'
-document.write(favoriteFood);
+let pokemonList = [
+  {name: 'Torterra', evoLevel: 3, type: [grass, ground]},
+  {name: 'Infernape', evoLevel: 3, type: [fire, fighting]},
+  {name: 'Empoleon', evoLevel: 3, type: [water, steel]},
+]
