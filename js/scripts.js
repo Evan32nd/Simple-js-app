@@ -1,5 +1,6 @@
 //Pokemon list with evolution level, height, and type
 
+let pokemonRepository = (function () {
 
 let pokemonList = [
   {
@@ -21,6 +22,18 @@ let pokemonList = [
     type: ["water", "steel"]
   },
 ];
+
+
+return {
+  add: function(pokemon) {
+    pokemonList.push(pokemon);
+  },
+  getAll: function() {
+    return pokemonList;
+  }
+};
+})();
+
 
 //test out... <br> out of quotes? line 31 repeat pokemonlist??
 
@@ -47,12 +60,11 @@ let pokemonList = [
 //   document.write(pokemonList.name);
 // }
 
-
 //replacing loop with for each
+pokemonRepository.getAll.forEach(showArray);
 
-pokemonList.forEach(showArray);
 
-function showArray(pokemonList) {
+function showArray(pokemonRepository.getAll) {
   if (pokemonList.height >= 2){
     document.write("Name: " + pokemonList.name + " (Height: " + pokemonList.height + "m) -- Wow he balling<br>");
 
