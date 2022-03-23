@@ -36,7 +36,6 @@ return {
 
 pokemonRepository.getAll().forEach(showArray);
 
-pokemonRepository.add(pokemon);
 
 function showArray(pokemonList) {
   if (pokemonList.height >= 2){
