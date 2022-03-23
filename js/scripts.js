@@ -34,6 +34,32 @@ return {
 };
 })();
 
+pokemonRepository.getAll().forEach(showArray);
+
+pokemonRepository.add(pokemon);
+
+function showArray(pokemonList) {
+  if (pokemonList.height >= 2){
+    document.write("Name: " + pokemonList.name + " (Height: " + pokemonList.height + "m) -- Wow he balling<br>");
+
+  }else if (pokemonList.height < 2 && pokemonList.height >= 1.5){
+    document.write("Name: " + pokemonList.name + " (Height: " + pokemonList.height + "m) -- Claims to be 6 foot when wearing shoes<br>");
+
+  }else if (pokemonList.height < 1.5){
+    document.write("Name: " + pokemonList.name + " (Height: " + pokemonList.height + "m) -- Unlucky bro ¯\\_(ツ)_/¯<br>");
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 //test out... <br> out of quotes? line 31 repeat pokemonlist??
 
@@ -52,7 +78,7 @@ return {
 //   }
 // }
 
-
+// console.log(pokemonRepository.getAll());
 
 // pokemonList.forEach(documentList);
 //
@@ -61,17 +87,3 @@ return {
 // }
 
 //replacing loop with for each
-pokemonRepository.getAll.forEach(showArray);
-
-
-function showArray(pokemonRepository.getAll) {
-  if (pokemonList.height >= 2){
-    document.write("Name: " + pokemonList.name + " (Height: " + pokemonList.height + "m) -- Wow he balling<br>");
-
-  }else if (pokemonList.height < 2 && pokemonList.height >= 1.5){
-    document.write("Name: " + pokemonList.name + " (Height: " + pokemonList.height + "m) -- Claims to be 6 foot when wearing shoes<br>");
-
-  }else if (pokemonList.height < 1.5){
-    document.write("Name: " + pokemonList.name + " (Height: " + pokemonList.height + "m) -- Unlucky bro ¯\\_(ツ)_/¯<br>");
-  }
-}
