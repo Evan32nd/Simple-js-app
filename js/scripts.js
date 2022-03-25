@@ -25,9 +25,28 @@ let pokemonList = [
 
 
 return {
+
+  showDetails: function showDetails(pokemon) {
+    console.log(pokemon)
+  },
+
+  addListItem: function addListItem(pokemon) {
+    let pokemonList = document.querySelector(".pokemon-list");
+    let listPokemon = document.createElement("li");
+    let button = document.createElement("button");
+    button.addEventListener("click", pokemonRepository.showDetails(pokemon)); 
+    button.innerText = pokemon.name;
+    button.classList.add("pokemon-button");
+    listPokemon.appendChild(button);
+    pokemonList.appendChild(listPokemon);
+  },
+
+
   add: function(pokemon) {
     pokemonList.push(pokemon);
   },
+
+
   getAll: function() {
     return pokemonList;
   }
@@ -35,56 +54,24 @@ return {
 })();
 
 
-pokemonRepository.getAll().forEach(function(items){
-
-
-  if (items.height >= 2){items
-    document.write("Name: " + items.name + " (Height: " + items.height + "m) -- Wow he balling<br>");
-
-
-  }else if (items.height < 2 && items.height >= 1.5){
-    document.write("Name: " + items.name + " (Height: " + items.height + "m) -- Claims to be 6 foot when wearing shoes<br>");
-
-
-}else if (items.height < 1.5){
-    document.write("Name: " + items.name + " (Height: " + items.height + "m) -- Unlucky bro ¯\\_(ツ)_/¯<br>");
-  }
+pokemonRepository.getAll().forEach(function(pokemon) {
+  pokemonRepository.addListItem(pokemon);
 })
 
 
-
-
-
-
-
-
-
-
-
-
-//test out... <br> out of quotes? line 31 repeat pokemonlist??
-
-//loop and if of pokemon name, height, and comment on height
-// let text = "Name: "
+// pokemonRepository.getAll().forEach(function(items){
 //
-// for (let i = 0; i < pokemonList.length; i++){
-//   if (pokemonList[i].height >= 2){
-//     document.write(text + pokemonList[i].name + " (Height: " + pokemonList[i].height + "m) -- Wow he ballin<br>");
 //
-//   }else if (pokemonList[i].height < 2 && pokemonList[i].height >= 1.5){
-//     document.write(text + pokemonList[i].name + " (Height: " + pokemonList[i].height + "m) -- Claims to be 6 foot when wearing shoes<br>");
 //
-//   }else if (pokemonList[i].height < 1.5){
-//     document.write(text + pokemonList[i].name + " (Height: " + pokemonList[i].height + "m) -- Unlucky bro ¯\\_(ツ)_/¯<br>");
+//   if (items.height >= 2){items
+//     document.write("Name: " + items.name + " (Height: " + items.height + "m) -- Wow he balling<br>");
+//
+//
+//   }else if (items.height < 2 && items.height >= 1.5){
+//     document.write("Name: " + items.name + " (Height: " + items.height + "m) -- Claims to be 6 foot when wearing shoes<br>");
+//
+//
+// }else if (items.height < 1.5){
+//     document.write("Name: " + items.name + " (Height: " + items.height + "m) -- Unlucky bro ¯\\_(ツ)_/¯<br>");
 //   }
-// }
-
-// console.log(pokemonRepository.getAll());
-
-// pokemonList.forEach(documentList);
-//
-// function documentList(pokemonList) {
-//   document.write(pokemonList.name);
-// }
-
-//replacing loop with for each
+// })
