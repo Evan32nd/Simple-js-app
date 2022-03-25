@@ -34,20 +34,22 @@ return {
 };
 })();
 
-pokemonRepository.getAll().forEach(showArray);
+
+pokemonRepository.getAll().forEach(function(items){
 
 
-function showArray(pokemonList) {
-  if (pokemonList.height >= 2){
-    document.write("Name: " + pokemonList.name + " (Height: " + pokemonList.height + "m) -- Wow he balling<br>");
+  if (items.height >= 2){items
+    document.write("Name: " + items.name + " (Height: " + items.height + "m) -- Wow he balling<br>");
 
-  }else if (pokemonList.height < 2 && pokemonList.height >= 1.5){
-    document.write("Name: " + pokemonList.name + " (Height: " + pokemonList.height + "m) -- Claims to be 6 foot when wearing shoes<br>");
 
-  }else if (pokemonList.height < 1.5){
-    document.write("Name: " + pokemonList.name + " (Height: " + pokemonList.height + "m) -- Unlucky bro ¯\\_(ツ)_/¯<br>");
+  }else if (items.height < 2 && items.height >= 1.5){
+    document.write("Name: " + items.name + " (Height: " + items.height + "m) -- Claims to be 6 foot when wearing shoes<br>");
+
+
+}else if (items.height < 1.5){
+    document.write("Name: " + items.name + " (Height: " + items.height + "m) -- Unlucky bro ¯\\_(ツ)_/¯<br>");
   }
-}
+})
 
 
 
