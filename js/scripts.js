@@ -27,14 +27,16 @@ let pokemonList = [
 return {
 
   showDetails: function showDetails(pokemon) {
-    console.log(pokemon)
+    console.log(pokemon.name)
   },
 
   addListItem: function addListItem(pokemon) {
     let pokemonList = document.querySelector(".pokemon-list");
     let listPokemon = document.createElement("li");
     let button = document.createElement("button");
-    button.addEventListener("click", pokemonRepository.showDetails(pokemon)); 
+    button.addEventListener('click', function() {
+      pokemonRepository.showDetails(pokemon);
+  })
     button.innerText = pokemon.name;
     button.classList.add("pokemon-button");
     listPokemon.appendChild(button);
